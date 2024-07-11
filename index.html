@@ -9,39 +9,70 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
   <script>
-    function myFunction() {
-      alert("Warum klickst du einfach so auf einen Button???")
-    }
 
     function hinweisEins() {
       element = document.getElementById("hinweisEinsContainer");
-      element.style.display = "block"
+      element.style.display = "block";
+      removeOther();
+      window.confetti();
+    }
+
+    function removeOther() {
+      document.getElementById("einleitung").style.display = "none";
+      document.getElementById("linkTrol").style.display = "none";
+      document.getElementById("weiss").style.display = "none";
     }
   </script>
 </head>
 
 <body>
   <div class="container">
-    <div class="container text-center">
 
-      <h1>Happ<a id="atag">y</a> Birthday!</h1>
+    <!-- EINLEITUNG -->
+    <div class="container text-center" style="padding-bottom: 30px;">
+      <h1 class="display-1">Happy Birthday!</h1>
+    </div>
+
+    <div class="container text-center" id="einleitung">
+      <span style="font-size: 4px;">Schau sicherheitshalber mal <a target="_blank"
+          href="https://youtu.be/oavMtUWDBTM?feature=shared">hier</a></span>
 
       <p>Auf dieser Seite befindet sich dein Geburtstagsgeschenk.
         Warte kurz, ich suche es eben raus .... </p>
       <p>...</p>
       <p>Mist, habs verloren. Findest du es?</p>
 
-      <button type="button" onclick="myFunction()">Ich bin 1 Button</button>
     </div>
 
-    <div class="container">
-      <p style="color: white;" onclick="hinweisEins()">Ein Hinweis</p>
+    <a id="linkTrol" href="https://youtu.be/dQw4w9WgXcQ?feature=shared" class="btn btn-primary"
+      style="position: absolute; bottom: 0; left: 0;" target="_blank">Ich bin 1
+      Button</a>
+
+
+    <p id="weiss" style="color: black; margin-top: 60px;" onclick="hinweisEins()">Kann man eigentlich auf
+      einen weißen Text auf weißen Hintergrund
+      klicken?</p>
+
+    <div class="container text-center" id="hinweisEinsContainer" style="display: none;">
+      <div>
+        <p>Du hast es gefunden! Wir gehen mit dir zum Escaperoom:</p>
+        <img src="./csm_Der_Spielzeugmacher_1200x1697_bcc465e67f.webp" class="img-thumbnail"
+          style="height: auto; width: 200px; margin-bottom: 30px;">
+        <p><em>Ihr seid absolute Rätsel- und Spieleliebhaber und erhaltet die begehrte Einladung zu einer
+            Audienz
+            beim Besitzer eines berühmten Spielzeugladens.
+            Dort angekommen, entdeckt Ihr ein vermeintlich geschlossenes Geschäft ohne Besitzer. Die Tür
+            springt dennoch quietschend auf und Ihr tretet ein!
+            Euch wird klar: Dies ist kein normaler Laden...
+
+            Könnt Ihr das Geheimnis um den mysteriösen Spielzeugladen und seinen Besitzer lüften?</em> </p>
+
+      </div>
     </div>
 
-    <div id="hinweisEinsContainer" class="container" style="display: none;">
-      <p> HIER BIN ICH</p>
-    </div>
   </div>
 
 </body>
